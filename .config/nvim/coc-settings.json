@@ -1,0 +1,19 @@
+{
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "json", "html", "css", "python"],
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤", 
+  "html.enable": true,
+  "html.filetypes": ["html"],
+  "html.format.enable": true,
+  "emmet.includeLanguages": {"eruby": "html"},
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/home/rwendt/.local/bin/black",
+  "python.jediPath": "/home/rwendt/.local/lib/python3.8/site-packages",
+  "python.jediEnabled": false,
+  "python.venvFolders": ["/home/rwendt/.virtualenvs"]
+}
