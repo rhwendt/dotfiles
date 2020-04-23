@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary' "commenting addon
 Plug 'tpope/vim-surround' "change surrounds
 Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'terryma/vim-multiple-cursors' "multi line editing
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } "markdown preview 
 
 " Syntax
 Plug 'janko/vim-test'
