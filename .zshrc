@@ -49,7 +49,7 @@ alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # virtual envs
-source /usr/bin/virtualenvwrapper.sh
+source /home/rwendt/.local/bin/virtualenvwrapper.sh
 
 # node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
