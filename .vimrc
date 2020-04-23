@@ -21,7 +21,6 @@ Plug 'tpope/vim-commentary' "commenting addon
 Plug 'tpope/vim-surround' "change surrounds
 Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'terryma/vim-multiple-cursors' "multi line editing
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } "markdown preview 
 
 " Syntax
 Plug 'janko/vim-test'
@@ -66,7 +65,7 @@ set splitbelow splitright
 set tabstop=2
 set termguicolors
 set timeout timeoutlen=500 ttimeoutlen=100
-set updatetime=300
+set updatetime=100
 set visualbell
 set wildmenu
 
@@ -132,6 +131,9 @@ nmap <leader>tn :TestNearest<cr>
 " Quickly open buffers and fuzzy find files
 nmap <leader>r :Buffers<CR>
 nmap <leader>e :FZF<CR>
+
+" copy into system buffer
+vnoremap <C-c> "+y<CR>
 " ======== end key mappings ========
 
 " ======== coc.nvim ========
