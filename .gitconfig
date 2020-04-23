@@ -1,0 +1,12 @@
+[user]
+	name = Ryan Wendt
+	email = rwendt@bandwidth.com
+[commit]
+	gpgsign = true
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	dm = diff
+	st = status
+        sh = show
