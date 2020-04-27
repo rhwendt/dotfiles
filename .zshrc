@@ -34,7 +34,6 @@ bindkey '^ ' autosuggest-accept
 # exports
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
 export EDITOR='nvim'
-export TERM=xterm-256color
 export PATH=$PATH:/home/rwendt/.local/bin
 export NVM_DIR="$HOME/.nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
