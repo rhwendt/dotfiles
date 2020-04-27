@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary' "commenting addon
 Plug 'tpope/vim-surround' "change surrounds
 Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'terryma/vim-multiple-cursors' "multi line editing
+Plug 'christoomey/vim-tmux-navigator' "tmux navigator
 
 " Syntax
 Plug 'janko/vim-test'
@@ -35,6 +36,7 @@ set autoread
 set backspace=indent,eol,start
 set background=dark
 set breakindent
+set colorcolumn=79
 set expandtab
 set foldlevel=2
 set foldmethod=indent
@@ -227,7 +229,6 @@ endfunction
 " Enable python syntax
 let g:python_highlight_all = 1
 syntax enable
-autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 
 " Allow netrw to open files in vertical split
 let g:netrw_altv=1
