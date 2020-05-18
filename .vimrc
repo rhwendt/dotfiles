@@ -67,7 +67,7 @@ set splitbelow splitright
 set tabstop=2
 set termguicolors
 set timeout timeoutlen=500 ttimeoutlen=100
-set updatetime=300
+set updatetime=100
 set visualbell
 set wildmenu
 
@@ -133,6 +133,9 @@ nmap <leader>tn :TestNearest<cr>
 " Quickly open buffers and fuzzy find files
 nmap <leader>r :Buffers<CR>
 nmap <leader>e :FZF<CR>
+
+" copy into system buffer
+vnoremap <C-c> "+y<CR>
 " ======== end key mappings ========
 
 " ======== coc.nvim ========
@@ -143,7 +146,7 @@ let g:coc_global_extensions = [
   \ 'coc-flutter',
   \ 'coc-html', 
   \ 'coc-json', 
-  \ 'coc-pairs',
+  \ 'coc-pairs', 
   \ 'coc-prettier', 
   \ 'coc-python',
   \ 'coc-snippets',

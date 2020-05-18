@@ -34,19 +34,21 @@ bindkey '^ ' autosuggest-accept
 # exports
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
 export EDITOR='nvim'
-export TERM=xterm-256color
 export PATH=$PATH:/home/rwendt/.local/bin
 export NVM_DIR="$HOME/.nvm"
+export RENDER_OUTPUT_LOCATION=~/config-renders
 
 # aliases
 alias vim=nvim
 alias vi=nvim
+alias sspass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@"; unset -f f; }; f'
+alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp "$@"; unset -f f; }; f'
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # virtual envs
-source /usr/bin/virtualenvwrapper.sh
+source /home/rwendt/.local/bin/virtualenvwrapper.sh
 
 # node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
