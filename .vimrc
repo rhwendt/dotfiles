@@ -15,10 +15,9 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "code completion
-Plug 'tpope/vim-fugitive' "git wrapper
-Plug 'tpope/vim-vinegar' "different file explorer, non project drawer
 Plug 'tpope/vim-commentary' "commenting addon
 Plug 'tpope/vim-surround' "change surrounds
+Plug 'tpope/vim-fugitive' "git wrapper
 Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'terryma/vim-multiple-cursors' "multi line editing
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
@@ -85,8 +84,19 @@ endif
 " ======== end settings ========
 
 " ======== key mappings ========
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
+
+" fugitive stuffs
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+nnoremap <leader>gf :diffget //2<CR>
+nnoremap <leader>gj :diffget //3<CR>
+
+" escape key
+inoremap kj <Esc>
+vnoremap kj <Esc>
+cnoremap kj <C-C><Esc>
 
 " fast commenting
 nmap <C-_> :Commentary<cr>
@@ -101,11 +111,6 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-
-" Fugitive Conflict Resolution
-nnoremap <leader>gd :Gvdiffsplit!<CR>
-nnoremap dgh :diffget //2<CR>
-nnoremap dgl :diffget //3<CR>
 
 " Splits
 nmap <leader>v :vsplit<cr>
@@ -146,7 +151,6 @@ let g:coc_global_extensions = [
   \ 'coc-flutter',
   \ 'coc-html', 
   \ 'coc-json', 
-  \ 'coc-pairs', 
   \ 'coc-prettier', 
   \ 'coc-python',
   \ 'coc-snippets',
