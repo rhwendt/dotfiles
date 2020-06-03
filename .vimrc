@@ -17,9 +17,12 @@ Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "code completion
 Plug 'tpope/vim-commentary' "commenting addon
 Plug 'tpope/vim-surround' "change surrounds
+Plug 'tpope/vim-fugitive' "git wrapper
 Plug 'itchyny/lightline.vim' "colorscheme for status bar
+Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'terryma/vim-multiple-cursors' "multi line editing
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Syntax
 Plug 'janko/vim-test'
@@ -86,6 +89,16 @@ endif
 let mapleader = " "
 let g:mapleader = " "
 
+"  vim fugitive
+nmap <leader>gs :G<CR>
+nmap <leader>gf :diffget //3<CR>
+nmap <leader>gj :diffget //2<CR>
+
+" bind escape key
+inoremap kj <Esc>
+vnoremap kj <Esc>
+cnoremap kj <C-C><Esc>
+
 " fast commenting
 nmap <C-_> :Commentary<cr>
 vmap <C-_> :Commentary<cr>
@@ -103,6 +116,10 @@ nmap <C-l> <C-w>l
 " Splits
 nmap <leader>v :vsplit<cr>
 nmap <leader>s :split<cr>
+
+" icrements
+nnoremap <A-a> <C-x>
+nnoremap <A-q> <C-a>
 
 " resizing splits
 nnoremap <silent> <C-Left> :vertical resize +3<CR>
@@ -141,6 +158,7 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-prettier', 
   \ 'coc-python',
+  \ 'coc-marketplace',
   \ 'coc-snippets',
   \ 'coc-yaml',
   \ 'coc-yank',
@@ -200,7 +218,7 @@ if !has('gui_running')
   set t_Co=256
 endif
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -226,7 +244,7 @@ let g:python_highlight_all = 1
 syntax enable
 
 " color scheme
-colorscheme onedark
+colorscheme gruvbox
 
 " auto reload vimrc
 autocmd BufWritePost .vimrc source %
