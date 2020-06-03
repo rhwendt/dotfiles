@@ -116,6 +116,10 @@ nmap <C-l> <C-w>l
 nmap <leader>v :vsplit<cr>
 nmap <leader>s :split<cr>
 
+" increments
+nnoremap <A-q> <C-a>
+nnoremap <A-a> <C-x>
+
 " resizing splits
 nnoremap <silent> <C-Left> :vertical resize +3<CR>
 nnoremap <silent> <C-Right> :vertical resize -3<CR>
