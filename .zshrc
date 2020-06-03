@@ -37,6 +37,7 @@ export EDITOR='nvim'
 export PATH=$PATH:/home/rwendt/.local/bin
 export NVM_DIR="$HOME/.nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
+export TERM="xterm-256color"
 
 # aliases
 alias vim=nvim
