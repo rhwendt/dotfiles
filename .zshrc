@@ -48,9 +48,6 @@ alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# virtual envs
-source /usr/bin/virtualenvwrapper.sh
-
 # node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -68,3 +65,19 @@ done
 # p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/rwendt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/rwendt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rwendt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/rwendt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+export VIRTUALENVWRAPPER_PYTHON=/home/rwendt/anaconda3/bin/python
