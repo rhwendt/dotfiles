@@ -91,8 +91,8 @@ let g:mapleader = " "
 
 "  vim fugitive
 nmap <leader>gs :G<CR>
-nmap <leader>gf :diffget //3<CR>
-nmap <leader>gj :diffget //2<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gj :diffget //3<CR>
 
 " bind escape key
 inoremap kj <Esc>
