@@ -22,7 +22,7 @@ Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'terryma/vim-multiple-cursors' "multi line editing
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'ThePrimeagen/vim-be-good'
 
 " Syntax
 Plug 'janko/vim-test'

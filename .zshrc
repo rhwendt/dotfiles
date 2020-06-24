@@ -44,6 +44,7 @@ alias vim=nvim
 alias vi=nvim
 alias sspass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@"; unset -f f; }; f'
 alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp "$@"; unset -f f; }; f'
+alias ll='ls -al'
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
