@@ -144,6 +144,9 @@ nmap <leader>tn :TestNearest<cr>
 nmap <leader>r :Buffers<CR>
 nmap <leader>e :FZF<CR>
 
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
 " copy into system buffer
 vnoremap <C-c> "+y<CR>
 " ======== end key mappings ========
