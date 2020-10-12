@@ -19,7 +19,7 @@
   "html.autoClosingTags": true,
   "python.linting.flake8Enabled": true,
   "python.formatting.provider": "yapf",
-  "python.formatting.yapfPath": "/home/rwendt/.local/bin/yapf",
+  "python.formatting.yapfPath": "/home/rwendt/anaconda3/bin/yapf",
   "python.jediPath": "/home/rwendt/.local/lib/python3.8/site-packages",
   "python.jediEnabled": false,
   "python.venvFolders": ["/home/rwendt/.virtualenvs"]

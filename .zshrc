@@ -59,9 +59,9 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # private stuff
-for file in ~/.private/*; do
-    source "$file"
-done
+# for file in ~/.private/*; do
+#     source "$file"
+# done
 
 # p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

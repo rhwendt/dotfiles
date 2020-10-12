@@ -14,6 +14,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 " Utility
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finder
+Plug 'stsewd/fzf-checkout.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "code completion
 Plug 'tpope/vim-commentary' "commenting addon
 Plug 'tpope/vim-surround' "change surrounds
@@ -22,7 +23,6 @@ Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'terryma/vim-multiple-cursors' "multi line editing
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
-Plug 'ThePrimeagen/vim-be-good'
 
 " Syntax
 Plug 'janko/vim-test'
@@ -88,9 +88,11 @@ endif
 " ======== key mappings ========
 let mapleader = " "
 let g:mapleader = " "
+let $FZF_DEFAULT_OPTS='--reverse'
 
 " fugitive stuffs
 nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :GCheckout<CR>
 nnoremap <leader>gd :Gvdiffsplit!<CR>
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gj :diffget //3<CR>
