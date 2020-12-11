@@ -48,9 +48,6 @@ alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# virtual envs
-source /home/rwendt/.local/bin/virtualenvwrapper.sh
-
 # node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -84,3 +81,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+eval "$(direnv hook zsh)"

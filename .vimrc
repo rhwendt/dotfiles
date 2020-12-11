@@ -14,6 +14,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 " Utility
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finder
+Plug 'stsewd/fzf-checkout.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "code completion
 Plug 'tpope/vim-commentary' "commenting addon
 Plug 'tpope/vim-surround' "change surrounds
@@ -23,6 +24,7 @@ Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'terryma/vim-multiple-cursors' "multi line editing
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'nathanalderson/yang.vim'
 
 " Syntax
 Plug 'janko/vim-test'
@@ -120,6 +122,9 @@ nmap <leader>s :split<cr>
 " icrements
 nnoremap <A-a> <C-x>
 nnoremap <A-q> <C-a>
+
+" fzf checkout
+nnoremap <leader>gc :GCheckout<cr>
 
 " resizing splits
 nnoremap <silent> <C-Left> :vertical resize +3<CR>
