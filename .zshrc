@@ -59,7 +59,7 @@ fi
 
 # private stuff
 for file in ~/.private/*; do
-    source "$file"
+    [ -f $file ] && source "$file"
 done
 
 # p10k
@@ -68,17 +68,15 @@ done
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/rwendt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/rwendt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/rwendt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/rwendt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/rwendt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/rwendt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/rwendt/anaconda3/bin:$PATH"
+        export PATH="/Users/rwendt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-eval "$(direnv hook zsh)"
