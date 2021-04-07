@@ -9,4 +9,6 @@
 	co = checkout
 	dm = diff
 	st = status
-        sh = show
+  sh = show
+[pull]
+	rebase = false

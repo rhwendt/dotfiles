@@ -7,7 +7,8 @@
     "json",
     "html",
     "css",
-    "python"
+    "python",
+    "markdown"
   ],
   "diagnostic.errorSign": "✖",
   "diagnostic.warningSign": "⚠",
@@ -16,8 +17,8 @@
   "html.enable": true,
   "html.filetypes": ["html", "handlebars", "htmldjango"],
   "html.format.enable": true,
-  "html.autoClosingTags": true,
   "html.format.indentInnerHtml": true,
+  "html.autoClosingTags": true,
   "python.formatting.provider": "yapf",
   "python.formatting.yapfPath": "/Users/rwendt/.local/bin/yapf",
   "python.jediPath": "/Users/rwendt/.local/lib/python3.8/site-packages",
