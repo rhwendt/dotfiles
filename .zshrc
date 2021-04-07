@@ -3,6 +3,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [ -f /etc/profile ]; then
+    PATH=""
+    source /etc/profile
+fi
+
 # need to source this first
 source ~/git/antigen/antigen.zsh
 
@@ -31,12 +36,17 @@ antigen apply
 # hotkey for autosuggestions
 bindkey '^ ' autosuggest-accept
 
+# private stuff
+for file in ~/.private/*; do
+    [ -f $file ] && source "$file"
+done
+
 # exports
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
 export EDITOR='nvim'
-export PATH=$PATH:/home/rwendt/.local/bin
 export NVM_DIR="$HOME/.nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
 export TERM="xterm-256color"
 
 # aliases
@@ -48,23 +58,13 @@ alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# node version manager
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-# private stuff
-for file in ~/.private/*; do
-    [ -f $file ] && source "$file"
-done
-
 # p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -80,3 +80,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# node version manager
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

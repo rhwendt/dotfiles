@@ -19,8 +19,8 @@
   "html.autoClosingTags": true,
   "html.format.indentInnerHtml": true,
   "python.formatting.provider": "yapf",
-  "python.formatting.yapfPath": "/Users/rwendt/.local/bin/yapf",
-  "python.jediPath": "/Users/rwendt/.local/lib/python3.8/site-packages",
-  "python.jediEnabled": false,
-  "python.venvFolders": ["/Users/rwendt/.virtualenvs"]
+  "python.formatting.yapfPath": "/Users/rwendt/anaconda3/bin/yapf",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.venvPath": "/Users/rwendt/anaconda3/envs"
 }

@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Themes
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'gruvbox-community/gruvbox'
 
 " Utility
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -62,6 +62,7 @@ set noswapfile
 set number
 set relativenumber
 set ruler
+set scrolloff=8
 set shiftwidth=2
 set shortmess+=c
 set smartcase
@@ -95,6 +96,9 @@ let g:mapleader = " "
 nmap <leader>gs :G<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gj :diffget //3<CR>
+
+" pyright
+nmap <leader>o :CocCommand pyright.organizeimports<CR>
 
 " bind escape key
 inoremap kj <Esc>
@@ -152,6 +156,9 @@ nmap <leader>e :FZF<CR>
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
+" nvim true color
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 " copy into system buffer
 vnoremap <C-c> "+y<CR>
 " ======== end key mappings ========
@@ -165,7 +172,7 @@ let g:coc_global_extensions = [
   \ 'coc-html', 
   \ 'coc-json', 
   \ 'coc-prettier', 
-  \ 'coc-python',
+  \ 'coc-pyright',
   \ 'coc-marketplace',
   \ 'coc-snippets',
   \ 'coc-yaml',
