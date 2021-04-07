@@ -7,7 +7,8 @@
     "json",
     "html",
     "css",
-    "python"
+    "python",
+    "markdown"
   ],
   "diagnostic.errorSign": "✖",
   "diagnostic.warningSign": "⚠",
@@ -16,6 +17,7 @@
   "html.enable": true,
   "html.filetypes": ["html", "handlebars", "htmldjango"],
   "html.format.enable": true,
+  "html.format.indentInnerHtml": true,
   "html.autoClosingTags": true,
   "python.linting.flake8Enabled": true,
   "python.formatting.provider": "yapf",
