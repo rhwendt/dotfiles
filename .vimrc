@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 
 " Themes
 Plug 'rafi/awesome-vim-colorschemes'
-
 " Utility
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "fuzzy finder
@@ -23,9 +22,9 @@ Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'terryma/vim-multiple-cursors' "multi line editing
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
-
+" Snippets
+Plug 'honza/vim-snippets'
 " Syntax
-Plug 'janko/vim-test'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
 Plug 'vim-python/python-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -62,6 +61,7 @@ set relativenumber
 set ruler
 set shiftwidth=2
 set shortmess+=c
+set scrolloff=8
 set smartcase
 set smarttab
 set splitbelow splitright
@@ -133,16 +133,6 @@ nnoremap <silent> <C-Down> :resize -3<CR>
 " Clear searches
 nmap <leader><space> :nohlsearch<cr>
 
-" Tabs
-nmap <leader>m :tabclose<cr>
-nmap <leader>z :tabprevious<cr>
-nmap <leader>c :tabnext<cr>
-nmap <leader>x :tabnew<cr>
-
-" Shortcuts for testing
-nmap <leader>t :TestFile<cr>
-nmap <leader>tn :TestNearest<cr>
-
 " Quickly open buffers and fuzzy find files
 nmap <leader>r :Buffers<CR>
 nmap <leader>e :FZF<CR>
@@ -154,14 +144,14 @@ vnoremap <C-c> "+y<CR>
 " ======== coc.nvim ========
 " Extensions
 let g:coc_global_extensions = [
-  \ 'coc-css', 
+  \ 'coc-css',
   \ 'coc-explorer',
-  \ 'coc-flutter',
-  \ 'coc-html', 
-  \ 'coc-json', 
-  \ 'coc-prettier', 
-  \ 'coc-python',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-prettier',
+  \ 'coc-pyright',
   \ 'coc-marketplace',
+  \ 'coc-tsserver',
   \ 'coc-snippets',
   \ 'coc-yaml',
   \ 'coc-yank',
@@ -175,10 +165,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Use K to show documentation in preview window
 nnoremap <silent>gy :call <SID>show_documentation()<CR>
@@ -194,14 +180,12 @@ endfunction
 " Quickly restart coc.nvim
 nmap <leader>cr :CocRestart<cr>
 
-" Floating window scroll support
-nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
-nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
+nmap <leader>cs :CocList snippets<cr>
 
-" Persistent yank
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+" coc-snippets
+imap <leader><tab> <Plug>(coc-snippets-expand)
 
-" Autocomplete 
+" Autocomplete
 " Remap tab & shift tab for pop out window
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
