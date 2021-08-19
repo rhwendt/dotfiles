@@ -22,6 +22,7 @@ Plug 'itchyny/lightline.vim' "colorscheme for status bar
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'terryma/vim-multiple-cursors' "multi line editing
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " Snippets
 Plug 'honza/vim-snippets'
 " Syntax
@@ -39,6 +40,7 @@ set background=dark
 set breakindent
 set colorcolumn=79
 set expandtab
+set encoding=UTF-8
 set foldlevel=2
 set foldmethod=indent
 set foldnestmax=10
@@ -132,6 +134,9 @@ nnoremap <A-a> <C-x>
 " fzf checkout
 nnoremap <leader>gc :GCheckout<cr>
 
+" fix indent in entire file
+nnoremap <leader>= gg<cr>=G<cr>
+
 " resizing splits
 nnoremap <silent> <C-Left> :vertical resize +3<CR>
 nnoremap <silent> <C-Right> :vertical resize -3<CR>
@@ -162,8 +167,8 @@ let g:coc_global_extensions = [
   \ 'coc-explorer',
   \ 'coc-html',
   \ 'coc-json',
-  \ 'coc-prettier',
   \ 'coc-pyright',
+  \ 'coc-prettier',
   \ 'coc-marketplace',
   \ 'coc-tsserver',
   \ 'coc-snippets',
@@ -252,5 +257,4 @@ autocmd BufWritePost .vimrc source %
 
 " auto reload lightline
 autocmd BufWritePost .vimrc call LightlineReload()
-
 " ======== end misc ========
