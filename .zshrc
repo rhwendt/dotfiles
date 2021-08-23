@@ -47,7 +47,6 @@ export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
-export TERM="xterm-256color"
 
 # aliases
 alias vim=nvim
