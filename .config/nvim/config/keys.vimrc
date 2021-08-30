@@ -1,13 +1,6 @@
 let mapleader = " "
 let g:mapleader = " "
 
-" fugitive stuffs
-nnoremap <leader>gs :G<CR>
-nnoremap <leader>gc :GCheckout<CR>
-nnoremap <leader>gd :Gvdiffsplit!<CR>
-nnoremap <leader>gf :diffget //2<CR>
-nnoremap <leader>gj :diffget //3<CR>
-
 " pyright
 nmap <leader>o :CocCommand pyright.organizeimports<CR>
 
@@ -63,6 +56,13 @@ vnoremap <C-c> "+y<CR>
 " Explorer/Sidebar
 nmap <leader>1 :CocCommand explorer<CR>
 
+" fugitive stuffs
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :GCheckout<CR>
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+nnoremap <leader>gf :diffget //2<CR>
+nnoremap <leader>gj :diffget //3<CR>
+
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -85,7 +85,7 @@ nmap <leader>cr :CocRestart<cr>
 
 " coc-snippets
 nmap <leader>cs :CocList snippets<cr>
-imap <leader><tab> <Plug>(coc-snippets-expand)
+imap <leader><Tab> <Plug>(coc-snippets-expand)
 
 " Autocomplete
 " Remap tab & shift tab for pop out window
@@ -99,7 +99,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " semshi stuffs
-nmap <silent> <leader>rr :Semshi rename<CR>
+nmap <silent> <leader>nn :Semshi rename<CR>
 
 nmap <silent> <leader>c :Semshi goto class next<CR>
 nmap <silent> <leader>C :Semshi goto class prev<CR>
