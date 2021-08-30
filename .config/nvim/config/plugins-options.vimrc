@@ -9,6 +9,7 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-explorer',
+  \ 'coc-emmet',
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-pyright',
