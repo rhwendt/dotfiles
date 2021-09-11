@@ -15,11 +15,7 @@
   "diagnostic.infoSign": "ℹ",
   "diagnostic.hintSign": "➤",
   "html.enable": true,
-  "html.filetypes": [
-    "html",
-    "handlebars",
-    "htmldjango"
-  ],
+  "html.filetypes": ["html", "handlebars", "htmldjango"],
   "html.format.enable": true,
   "html.format.indentInnerHtml": true,
   "html.autoClosingTags": true,
@@ -27,5 +23,6 @@
   "python.formatting.blackdPath": "/Users/rwendt/anaconda3/bin/blackd",
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.venvPath": "/Users/rwendt/anaconda3/envs"
+  "python.venvPath": "/Users/rwendt/anaconda3/envs",
+  "yaml.format.enable": true
 }
