@@ -58,6 +58,7 @@ nmap <leader>1 :CocCommand explorer<CR>
 
 " fugitive stuffs
 nnoremap <leader>gs :G<CR>
+nnoremap <leader>gl :Git log --oneline<CR>
 nnoremap <leader>gc :GCheckout<CR>
 nnoremap <leader>gd :Gvdiffsplit!<CR>
 nnoremap <leader>gf :diffget //2<CR>
