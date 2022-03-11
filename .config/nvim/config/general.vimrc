@@ -1,12 +1,14 @@
 " colorscheme
+" colorscheme solarized8
+" set background=light
 colorscheme dracula
+set background=dark
 
 " settings
 set autoread
 set backspace=indent,eol,start
-set background=dark
 set breakindent
-set colorcolumn=79
+set colorcolumn=88
 set expandtab
 set encoding=UTF-8
 set foldlevel=2

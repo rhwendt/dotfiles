@@ -4,6 +4,9 @@ let g:mapleader = " "
 " pyright
 nmap <leader>o :CocCommand pyright.organizeimports<CR>
 
+" linting errors
+nmap <C-q> :CocList diagnostics<CR>
+
 " bind escape key
 inoremap kj <Esc>
 vnoremap kj <Esc>
