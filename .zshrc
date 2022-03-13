@@ -37,9 +37,9 @@ antigen apply
 bindkey '^ ' autosuggest-accept
 
 # private stuff
-for file in ~/.private/*; do
-    [ -f $file ] && source "$file"
-done
+#for file in ~/.private/*; do
+#    [ -f $file ] && source "$file"
+#done
 
 # exports
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
@@ -47,6 +47,7 @@ export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
+export GPG_TTY=$(tty)
 
 # aliases
 alias vim=nvim
