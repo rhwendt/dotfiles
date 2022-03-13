@@ -37,9 +37,9 @@ antigen apply
 bindkey '^ ' autosuggest-accept
 
 # private stuff
-for file in ~/.private/*; do
-    [ -f $file ] && source "$file"
-done
+#for file in ~/.private/*; do
+#    [ -f $file ] && source "$file"
+#done
 
 # exports
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
@@ -47,6 +47,7 @@ export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
+export GPG_TTY=$(tty)
 
 # aliases
 alias vim=nvim
@@ -68,14 +69,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/rwendt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/rwendt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/rwendt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/rwendt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/rwendt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rwendt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/rwendt/anaconda3/bin:$PATH"
+        export PATH="/home/rwendt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
