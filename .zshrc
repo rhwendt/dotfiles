@@ -17,7 +17,7 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle pip
-antigen bundle vi-mode 
+antigen bundle vi-mode
 antigen bundle command-not-found
 antigen bundle tmuxinator/tmuxinator
 
@@ -36,18 +36,13 @@ antigen apply
 # hotkey for autosuggestions
 bindkey '^ ' autosuggest-accept
 
-# private stuff
-#for file in ~/.private/*; do
-#    [ -f $file ] && source "$file"
-#done
-
 # exports
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
 export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 
 # aliases
 alias vim=nvim
