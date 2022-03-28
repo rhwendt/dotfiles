@@ -3,7 +3,6 @@
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnType": true,
   "coc.preferences.useQuickfixForLocations": true,
-  "coc.preferences.willSaveHandlerTimeout": 2000,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "json",
@@ -23,7 +22,7 @@
   "html.format.indentInnerHtml": true,
   "html.autoClosingTags": true,
   "python.formatting.provider": "black",
-  "python.formatting.blackdPath": "/Users/rwendt/anaconda3/bin/black",
+  "python.formatting.blackPath": "/Users/rwendt/anaconda3/bin/black",
   "python.formatting.blackArgs": ["--line-length=88"],
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
@@ -34,5 +33,7 @@
     "--select=C,E,F,W,B,B950"
   ],
   "python.venvPath": "/Users/rwendt/anaconda3/envs",
-  "yaml.format.enable": true
+  "yaml.enable": true,
+  "yaml.format.enable": true,
+  "yaml.format.printWidth": 88
 }
