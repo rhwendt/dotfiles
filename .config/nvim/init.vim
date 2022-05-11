@@ -36,7 +36,7 @@ Plug 'honza/vim-snippets'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nathanalderson/yang.vim'
-" Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -131,6 +131,7 @@ nmap <leader>1 :CocCommand explorer<CR>
 " fugitive stuffs
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gl :Git log --oneline<CR>
+nnoremap <leader>gb :Git blame<cr>
 nnoremap <leader>gc :GCheckout<CR>
 nnoremap <leader>gd :Gvdiffsplit!<CR>
 nnoremap <leader>gf :diffget //2<CR>
@@ -248,10 +249,13 @@ endif
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" python syntax highlight
+" python stuff
 let g:python_highlight_all = 1
+let g:python3_host_prog = '/Users/rwendt/.pyenv/versions/3.9.12/bin/python'
 syntax enable
 
+" set ttp files as jinja
+au BufRead,BufNewFile *.ttp set filetype=jinja
 
 " reload lightline
 function! LightlineReload()
