@@ -249,8 +249,9 @@ endif
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" python syntax highlight
+" python stuff
 let g:python_highlight_all = 1
+let g:python3_host_prog = '/Users/rwendt/.pyenv/versions/3.9.12/bin/python'
 syntax enable
 
 " set ttp files as jinja
