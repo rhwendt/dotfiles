@@ -3,11 +3,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [ -f /etc/profile ]; then
-    PATH=""
-    source /etc/profile
-fi
-
 fpath+=~/.zfunc
 
 # need to source this first
@@ -41,9 +36,9 @@ bindkey '^ ' autosuggest-accept
 # exports
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
 export EDITOR='nvim'
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
-export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 # export GPG_TTY=$(tty)
 
 # aliases

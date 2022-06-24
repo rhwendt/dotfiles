@@ -251,7 +251,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " python stuff
 let g:python_highlight_all = 1
-let g:python3_host_prog = '/Users/rwendt/.pyenv/versions/3.9.12/bin/python'
+let g:python3_host_prog =  '$HOME/.pyenv/versions/3.9.13/bin/python'
 syntax enable
 
 " set ttp files as jinja
