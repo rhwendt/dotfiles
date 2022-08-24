@@ -21,17 +21,17 @@
   "html.format.indentInnerHtml": true,
   "html.autoClosingTags": true,
   "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/Users/rwendt/.pyenv/shims/black",
+  "python.formatting.blackPath": "~/.pyenv/shims/black",
   "python.formatting.blackArgs": ["--line-length=88"],
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "/Users/rwendt/.pyenv/shims/flake8",
+  "python.linting.flake8Path": "~/.pyenv/shims/flake8",
   "python.linting.flake8Args": [
     "--max-line-length=88",
     "--ignore=E501,W503",
     "--select=C,E,F,W,B,B950"
   ],
-  "python.venvPath": "/Users/rwendt/Library/Caches/pypoetry/virtualenvs",
+  "python.venvPath": "~/.config/pypoetry/virtualenvs",
   "yaml.enable": true,
   "yaml.format.enable": true,
   "yaml.format.printWidth": 88

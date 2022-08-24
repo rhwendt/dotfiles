@@ -161,17 +161,6 @@ nmap <leader>cr :CocRestart<cr>
 nmap <leader>cs :CocList snippets<cr>
 imap <leader><Tab> <Plug>(coc-snippets-expand)
 
-" Autocomplete
-" Remap tab & shift tab for pop out window
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Make enter select first item if nothing is selected
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-
-" Allow enter to select expanded option
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 " semshi stuffs
 nmap <silent> <leader>nn :Semshi rename<CR>
 

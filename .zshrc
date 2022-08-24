@@ -47,6 +47,9 @@ alias vi=nvim
 alias sspass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@"; unset -f f; }; f'
 alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp "$@"; unset -f f; }; f'
 alias ll='ls -al'
+alias ys='yadm status'
+alias ya='yadm add'
+alias yc='yadm commit -am'
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -64,5 +67,7 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
+
+eval "`dircolors ~/.dir_colors/dircolors`"
 
 export PATH="$HOME/.poetry/bin:$PATH"
