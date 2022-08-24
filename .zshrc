@@ -50,6 +50,7 @@ alias ll='ls -al'
 alias ys='yadm status'
 alias ya='yadm add'
 alias yc='yadm commit -am'
+alias yp='yadm push'
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
