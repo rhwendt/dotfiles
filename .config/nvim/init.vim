@@ -72,6 +72,7 @@ let g:mapleader = " "
 
 " pyright
 nmap <leader>o :CocCommand pyright.organizeimports<CR>
+nmap <leader>s :CocCommand pyright.createtypestub<CR>
 
 " linting errors
 nmap <C-q> :CocList diagnostics<CR>
@@ -94,10 +95,6 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-
-" Splits
-nmap <leader>v :vsplit<cr>
-nmap <leader>s :split<cr>
 
 " increments
 nnoremap <A-q> <C-a>
@@ -127,14 +124,15 @@ vnoremap <C-c> "+y<CR>
 
 " Explorer/Sidebar
 nmap <leader>1 :CocCommand explorer<CR>
+nmap <leader>cd :CocDiagnostics<CR>
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
+      \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
@@ -143,6 +141,11 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " fugitive stuffs
 nnoremap <leader>gs :G<CR>

@@ -20,6 +20,7 @@
   "html.format.enable": true,
   "html.format.indentInnerHtml": true,
   "html.autoClosingTags": true,
+  "python.analysis.autoImportCompletions": true,
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.pyenv/shims/black",
   "python.formatting.blackArgs": ["--line-length=88"],
@@ -28,7 +29,7 @@
   "python.linting.flake8Path": "~/.pyenv/shims/flake8",
   "python.linting.flake8Args": [
     "--max-line-length=88",
-    "--ignore=E501,W503",
+    "--ignore=E501,E203,W503",
     "--select=C,E,F,W,B,B950"
   ],
   "python.venvPath": "~/.config/pypoetry/virtualenvs",

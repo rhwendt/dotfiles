@@ -72,3 +72,5 @@ eval "$(pyenv virtualenv-init -)"
 eval "`dircolors ~/.dir_colors/dircolors`"
 
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/home/rwendt/.local/bin:$PATH"
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
