@@ -147,6 +147,8 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+let g:coc_snippet_next = '<tab>'
+
 " fugitive stuffs
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gl :Git log --oneline<CR>

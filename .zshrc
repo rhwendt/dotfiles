@@ -3,7 +3,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-fpath+=~/.zfunc
+# Autoload zsh shell functions defined in the function path 
+fpath+=( ~/.zsh_autoload_functions "${fpath[@]}" )
+autoload -Uz load_github
 
 # need to source this first
 source ~/git/antigen/antigen.zsh
@@ -46,6 +48,7 @@ alias vim=nvim
 alias vi=nvim
 alias sspass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@"; unset -f f; }; f'
 alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp "$@"; unset -f f; }; f'
+alias bwlogin='bw login rhwendt@gmail.com $(pass home/bitwarden)'
 alias ll='ls -al'
 alias ys='yadm status'
 alias ya='yadm add'
