@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>1", vim.cmd.Explore)
+vim.keymap.set("n", "<leader>1", vim.cmd.NvimTreeToggle)
 
 -- bind escape key
 vim.keymap.set({ "i", "v", "c" }, "kj", "<Esc>")
