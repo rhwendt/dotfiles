@@ -47,6 +47,7 @@ export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 alias vim=nvim
 alias vi=nvim
 alias sspass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@"; unset -f f; }; f'
+alias ncpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@" -p 830 -s netconf; unset -f f; }; f'
 alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp "$@"; unset -f f; }; f'
 alias bwlogin='bw login rhwendt@gmail.com $(pass home/bitwarden)'
 alias ll='ls -al'
