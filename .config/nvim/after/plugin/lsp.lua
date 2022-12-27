@@ -1,4 +1,6 @@
 require("luasnip.loaders.from_snipmate").lazy_load()
+require("neodev").setup()
+
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
@@ -6,6 +8,10 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 	"pyright",
 	"sumneko_lua",
+	"marksman",
+	"vimls",
+	"yamlls",
+	"bashls",
 })
 -- Fix Undefined global 'vim'
 lsp.configure("sumneko_lua", {

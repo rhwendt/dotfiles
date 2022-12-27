@@ -43,6 +43,7 @@ return require("packer").startup(function(use)
 	use({ "tpope/vim-commentary" })
 	use({ "tpope/vim-surround" })
 	use({ "christoomey/vim-tmux-navigator" })
+	use({ "folke/neodev.nvim" })
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { { "kyazdani42/nvim-web-devicons", opt = true } },
@@ -60,6 +61,7 @@ return require("packer").startup(function(use)
 			"nvim-tree/nvim-web-devicons", -- optional, for file icons
 		},
 	})
+	use("nvim-tree/nvim-web-devicons")
 
 	-- lsp
 	use({
@@ -74,6 +76,7 @@ return require("packer").startup(function(use)
 			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/cmp-cmdline" },
 			{ "saadparwaiz1/cmp_luasnip" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
