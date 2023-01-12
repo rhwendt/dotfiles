@@ -18,7 +18,7 @@ local sources = {
 	diagnostics.flake8.with({
 		extra_args = {
 			"--max-line-length=88",
-			"--ignore=E501,E203,W503",
+			"--ignore=E501,E203,W503,W292",
 			"--select=C,E,F,W,B,B950",
 		},
 	}),
