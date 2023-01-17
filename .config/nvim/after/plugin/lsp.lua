@@ -10,7 +10,7 @@ lsp.ensure_installed({
 	"sumneko_lua",
 	"marksman",
 	"vimls",
-	"yamlls",
+	"ansiblels",
 	"bashls",
 })
 -- Fix Undefined global 'vim'

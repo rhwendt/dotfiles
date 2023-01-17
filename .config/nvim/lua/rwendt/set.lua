@@ -29,3 +29,4 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "88"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.g.python3_host_prog = "$HOME/.pyenv/versions/3.9.13/bin/python"

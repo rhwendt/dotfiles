@@ -25,7 +25,6 @@ local sources = {
 	diagnostics.hadolint,
 	diagnostics.mypy,
 	diagnostics.vale,
-	diagnostics.yamllint,
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
