@@ -8,9 +8,10 @@ local sources = {
 	formatting.eslint,
 	formatting.stylua,
 	formatting.terraform_fmt,
-	formatting.textlint,
+	-- formatting.textlint,
 	formatting.xmllint,
 	formatting.yamlfmt,
+	formatting.markdownlint,
 	diagnostics.ansiblelint,
 	diagnostics.buf,
 	diagnostics.djlint,
@@ -24,7 +25,8 @@ local sources = {
 	}),
 	diagnostics.hadolint,
 	diagnostics.mypy,
-	diagnostics.vale,
+	diagnostics.markdownlint,
+	diagnostics.misspell,
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
