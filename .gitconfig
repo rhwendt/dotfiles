@@ -23,4 +23,5 @@
 	program = gpg
 [init]
 	defaultBranch = main
-	templatedir = ~/.config/git/templates/
+[core]
+	hooksPath = /home/rwendt/.config/git/templates/hooks

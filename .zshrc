@@ -51,10 +51,13 @@ alias ncpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh 
 alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp "$@"; unset -f f; }; f'
 alias bwlogin='bw login rhwendt@gmail.com $(pass home/bitwarden)'
 alias ll='ls -al'
-alias ys='yadm status'
-alias ya='yadm add'
+alias ys='yadm status -s | awk '{printf "%s ", $2}''
+alias ya='yadm add `ys`'
 alias yc='yadm commit -am'
 alias yp='yadm push'
+
+function yadm_changed() { yadm status --porcelain=v2 | awk '$2 == ".M" {printf "%s ",$9}';}
+function yadm_add() {yadm add `yadm_changed`;}
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
