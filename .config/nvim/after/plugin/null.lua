@@ -27,6 +27,7 @@ local sources = {
 	diagnostics.mypy,
 	diagnostics.markdownlint,
 	diagnostics.misspell,
+	diagnostics.commitlint,
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({

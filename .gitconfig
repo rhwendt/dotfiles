@@ -24,4 +24,4 @@
 [init]
 	defaultBranch = main
 [core]
-	hooksPath = /home/rwendt/.config/git/templates/hooks
+    hooksPath = /home/rwendt/.config/git/hooks
