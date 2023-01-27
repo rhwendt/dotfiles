@@ -4,6 +4,7 @@ local formatting = null_ls.builtins.formatting
 local sources = {
 	formatting.black.with({ extra_args = { "--line-length=88" } }),
 	formatting.isort.with({ extra_args = { "--profile", "black" } }),
+	formatting.jq,
 	formatting.djlint,
 	formatting.eslint,
 	formatting.stylua,
@@ -28,6 +29,7 @@ local sources = {
 	diagnostics.markdownlint,
 	diagnostics.misspell,
 	diagnostics.commitlint,
+	diagnostics.jsonlint,
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
