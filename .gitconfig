@@ -1,6 +1,7 @@
 [user]
 	name = Ryan Wendt
 	email = rwendt@bandwidth.com
+    signingkey = 9AD184108FA349F7
 [commit]
 	gpgsign = true
 [alias]
