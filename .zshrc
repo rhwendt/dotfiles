@@ -1,3 +1,4 @@
+export GPG_TTY=$(tty)
 # p10k - must go at the top
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -41,7 +42,6 @@ export EDITOR='nvim'
 export NVM_DIR="$HOME/.config/nvm"
 export RENDER_OUTPUT_LOCATION=~/config-renders
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
-# export GPG_TTY=$(tty)
 
 function yadm_changed() { yadm status --porcelain=v2 | awk '{printf "%s ",$9}';}
 function yadm_add() {yadm add `yadm_changed`;}
