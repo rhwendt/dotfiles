@@ -7,21 +7,11 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	"pyright",
-	"sumneko_lua",
+	"lua_ls",
 	"marksman",
 	"vimls",
 	"ansiblels",
 	"bashls",
-})
--- Fix Undefined global 'vim'
-lsp.configure("sumneko_lua", {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
-	},
 })
 
 lsp.on_attach(function(client, bufnr)

@@ -26,3 +26,5 @@
 	defaultBranch = main
 [core]
     hooksPath = /home/rwendt/.config/git/hooks
+[push]
+	autoSetupRemote = true

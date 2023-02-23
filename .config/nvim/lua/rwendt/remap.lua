@@ -47,3 +47,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
 
 -- clear searches
 vim.keymap.set("n", "<leader><space>", ":nohlsearch<cr>")
+
+-- restart LSP
+vim.keymap.set("n", "<leader>rl", ":LspRestart<cr>")
