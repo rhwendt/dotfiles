@@ -9,6 +9,12 @@ function M.on_attach(bufnr)
 		api.node.open.edit,
 		{ desc = "Open", buffer = bufnr, noremap = true, silent = true, nowait = true }
 	)
+	vim.keymap.set(
+		"n",
+		"<CR>",
+		api.node.open.edit,
+		{ desc = "Open", buffer = bufnr, noremap = true, silent = true, nowait = true }
+	)
 end
 
 function M.print_node_path()
