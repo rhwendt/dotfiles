@@ -84,3 +84,5 @@ export PATH="/home/rwendt/.local/bin:$PATH"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 export GOPATH=$(go env GOPATH)
 export PATH="$GOPATH/bin:$PATH"
+export DENO_INSTALL="/home/rwendt/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
