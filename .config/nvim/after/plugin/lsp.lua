@@ -12,6 +12,7 @@ lsp.ensure_installed({
 	"vimls",
 	"ansiblels",
 	"bashls",
+	"terraformls",
 })
 
 lsp.on_attach(function(client, bufnr)

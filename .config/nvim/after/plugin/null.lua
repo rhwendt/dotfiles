@@ -9,11 +9,11 @@ local sources = {
 	formatting.eslint,
 	formatting.stylua,
 	formatting.terraform_fmt,
-	-- formatting.textlint,
 	formatting.xmllint,
 	formatting.yamlfmt,
 	formatting.markdownlint,
 	diagnostics.ansiblelint,
+	diagnostics.actionlint,
 	diagnostics.buf,
 	diagnostics.djlint,
 	diagnostics.eslint,
@@ -30,6 +30,7 @@ local sources = {
 	diagnostics.misspell,
 	diagnostics.commitlint,
 	diagnostics.jsonlint,
+	diagnostics.terraform_validate,
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({

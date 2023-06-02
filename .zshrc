@@ -58,6 +58,7 @@ alias ys='yadm status'
 alias ya='yadm_add' 
 alias yc='yadm commit -am'
 alias yp='yadm push'
+alias k='kubectl'
 
 
 # fzf

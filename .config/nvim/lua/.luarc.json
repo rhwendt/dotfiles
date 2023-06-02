@@ -27,5 +27,6 @@
         "/home/rwendt/.local/share/nvim/site/pack/packer/start/plenary.nvim",
         "/home/rwendt/.local/share/nvim/site/pack/packer/start/telescope.nvim",
         "${3rd}/luassert/library"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 }
