@@ -8,7 +8,7 @@ fpath+=( ~/.zsh_autoload_functions "${fpath[@]}" )
 autoload -Uz load_github
 
 # need to source this first
-source ~/antigen.zsh
+source ~/.antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
