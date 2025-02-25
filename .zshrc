@@ -8,7 +8,7 @@ fpath+=( ~/.zsh_autoload_functions "${fpath[@]}" )
 autoload -Uz load_github
 
 # need to source this first
-source ~/.antigen.zsh
+source ~/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -54,21 +54,17 @@ eval "`dircolors ~/.dircolors`"
 # k8s
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
-# homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # exports
 export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
-export NVM_DIR="$HOME/.config/nvm"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$PATH:/opt/nvim/"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
 
 # aliases
-alias vim=nvim
-alias vi=nvim
+alias vi='nvim'
 alias ll='ls -al'
 alias ys='yadm status'
 alias ya='yadm_add' 
