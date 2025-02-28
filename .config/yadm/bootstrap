@@ -70,6 +70,14 @@ else
   sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
   echo " --- Done"
 
+  # Install vivid
+  echo "======================================================"
+  echo "Installing vivid"
+  echo "======================================================"
+  wget "https://github.com/sharkdp/vivid/releases/download/v0.10.1/vivid_0.10.1_amd64.deb"
+  sudo dpkg -i vivid_0.10.1_amd64.deb
+  rm -f vivid_0.10.1_amd64.deb
+
   # Install LazyGit
   echo "======================================================"
   echo "Installing LazyGit"

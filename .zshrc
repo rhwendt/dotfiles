@@ -48,8 +48,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
-# dircolors
-eval "`dircolors ~/.dircolors`"
+# vivid
+export LS_COLORS="$(vivid generate tokyonight-storm)"
 
 # k8s
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
