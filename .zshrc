@@ -60,11 +60,12 @@ export GOPATH=$(go env GOPATH)
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$PATH:/opt/nvim/"
+export PATH="$PATH:/opt/nvim"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
 
 # aliases
 alias vi='nvim'
+alias vim='nvim'
 alias ll='ls -al'
 alias ys='yadm status'
 alias ya='yadm_add' 

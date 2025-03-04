@@ -56,7 +56,6 @@ else
   echo "Installing tpm, and tmux colorscheme"
   echo "======================================================"
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  wget https://raw.githubusercontent.com/folke/tokyonight.nvim/refs/heads/main/extras/tmux/tokyonight_storm.tmux -O ~/.tokyonight_storm.tmux
 
   # Install kubectl
   echo "======================================================"
