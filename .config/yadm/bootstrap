@@ -1,0 +1,108 @@
+#!/bin/bash
+
+system_type=$(uname -s)
+
+if [ "$system_type" == "Darwin" ]; then
+
+  echo "Installing xcode"
+  xcode-select --install
+
+  # install homebrew if it's missing on macos
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  echo "Installing brews"
+  brew update
+  brew install neovim pyenv openssl readline sqlite3 xz zlib tcl-tk@8 go
+
+else
+  # Install missing packages
+  echo "======================================================"
+  echo "Installing Packages"
+  echo "======================================================"
+  sudo apt update
+  sudo apt-get -y install golang-go zsh build-essential \
+    libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+    libsqlite3-dev curl git libncursesw5-dev xz-utils tk-dev \
+    libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libfuse2 \
+    ripgrep fd-find fzf unzip
+  echo " --- Done"
+
+  # Install pyenv
+  echo "======================================================"
+  echo "Installing pyenv"
+  echo "======================================================"
+  curl -fsSL https://pyenv.run | bash
+  echo " --- Done"
+
+  # Install node version manager
+  echo "======================================================"
+  echo "Installing nvm"
+  echo "======================================================"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+  echo " --- Done"
+
+  # Install antigen
+  echo "======================================================"
+  echo "Installing antigen"
+  echo "======================================================"
+  curl -L git.io/antigen >~/.antigen.zsh
+  echo " --- Done"
+
+  # Install tmux tpm
+  echo "======================================================"
+  echo "Installing tpm, and tmux colorscheme"
+  echo "======================================================"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  # Install kubectl
+  echo "======================================================"
+  echo "Installing kubectl"
+  echo "======================================================"
+  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  rm -f kubectl
+  echo " --- Done"
+
+  # Install neovim
+  echo "======================================================"
+  echo "Installing neovim"
+  echo "======================================================"
+  sudo mkdir -p /opt/nvim
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+  chmod u+x nvim-linux-x86_64.appimage
+  sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
+  echo " --- Done"
+
+  # Install vivid
+  echo "======================================================"
+  echo "Installing vivid"
+  echo "======================================================"
+  wget "https://github.com/sharkdp/vivid/releases/download/v0.10.1/vivid_0.10.1_amd64.deb"
+  sudo dpkg -i vivid_0.10.1_amd64.deb
+  rm -f vivid_0.10.1_amd64.deb
+  echo " --- Done"
+
+  # Install LazyGit
+  echo "======================================================"
+  echo "Installing LazyGit"
+  echo "======================================================"
+  LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+  curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+  tar xf lazygit.tar.gz lazygit
+  sudo install lazygit -D -t /usr/local/bin/
+  rm -f lazygit.tar.gz lazygit
+  echo " --- Done"
+
+  # change shell to zsh
+  if [ $SHELL != "/usr/bin/zsh" ]; then
+    echo "======================================================"
+    echo "Changing default shell to zsh"
+    echo "======================================================"
+    chsh -s $(which zsh)
+    echo " --- Done"
+  fi
+
+fi

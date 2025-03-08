@@ -8,7 +8,7 @@ fpath+=( ~/.zsh_autoload_functions "${fpath[@]}" )
 autoload -Uz load_github
 
 # need to source this first
-source ~/git/antigen/antigen.zsh
+source ~/.antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -35,40 +35,11 @@ antigen apply
 # hotkey for autosuggestions
 bindkey '^ ' autosuggest-accept
 
-# exports
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
-export EDITOR='nvim'
-export NVM_DIR="$HOME/.config/nvm"
-export RENDER_OUTPUT_LOCATION=~/config-renders
-export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
-# export GPG_TTY=$(tty)
-
-function yadm_changed() { yadm status --porcelain=v2 | awk '{printf "%s ",$9}';}
-function yadm_add() {yadm add `yadm_changed`;}
-
-# aliases
-alias vim=nvim
-alias vi=nvim
-alias sspass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@"; unset -f f; }; f'
-alias ncpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) ssh "$@" -p 830 -s netconf; unset -f f; }; f'
-alias scpass='f(){ echo -ne "\033]0;$@\007" ; sshpass -f <(pass idm/rwendt) scp "$@"; unset -f f; }; f'
-alias bwlogin='bw login rhwendt@gmail.com $(pass home/bitwarden)'
-alias ll='ls -al'
-alias ys='yadm status'
-alias ya='yadm_add' 
-alias yc='yadm commit -am'
-alias yp='yadm push'
-
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# node version manager
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -77,10 +48,30 @@ eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
-eval "`dircolors ~/.dir_colors/dircolors`"
+# vivid
+export LS_COLORS="$(vivid generate tokyonight-storm)"
 
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="/home/rwendt/.local/bin:$PATH"
+# k8s
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# exports
+export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
 export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$PATH:/opt/nvim"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=72'
+
+# aliases
+alias vi='nvim'
+alias vim='nvim'
+alias ll='ls -al'
+alias ys='yadm status'
+alias ya='yadm_add' 
+alias yc='yadm commit -am'
+alias yp='yadm push'
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

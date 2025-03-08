@@ -2,7 +2,7 @@
 	name = Ryan Wendt
 	email = rhwendt@gmail.com
 [commit]
-	gpgsign = true
+	gpgsign = false
 [alias]
 	br = branch
 	ci = commit
